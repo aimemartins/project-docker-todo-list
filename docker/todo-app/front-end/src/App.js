@@ -13,6 +13,8 @@ import ItemList from './components/ItemList';
 import ItemAdd from './components/ItemAdd';
 import TaskReset from "./components/TaskReset";
 
+// atualizar
+
 function App() {
   return (
     <Router>
@@ -23,8 +25,8 @@ function App() {
           <Switch>
             <TaskProvider>
               <Route exact={true} path="/">
-                  <ItemAdd />
-                  <ItemList />
+                <ItemAdd />
+                <ItemList />
               </Route>
               <Route exact={true} path="/debug">
                 <TaskReset />
