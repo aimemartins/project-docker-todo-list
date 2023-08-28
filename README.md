@@ -147,7 +147,7 @@ O avaliador executará o comando no arquivo `command08.dc`.
        
    9. Gere uma build a partir do Dockerfile do `back-end` do `todo-app` nomeando a imagem para `todobackend`
           - Implemente a função getSchedule que irá disponibilizar um cronograma com os horários de visita da semana disponíveis para cada espécie de animal. <br> <br>
-      Escreva no arquivo `command09.dc` um comando que fará o `build`(documentação do comando) de uma imagem a partir do arquivo `./docker/todo-app/back-end/Dockerfile`, esta imagem deve ter o nome `todobackend`.
+      Escreva no arquivo `command09.dc` um comando que fará o `build`(documentação do comando) de uma imagem a partir do arquivo `./docker/todo-app/back-end/Dockerfile`, esta imagem deve ter o nome `todobackend`. <br>
       No arquivo `./docker/todo-app/back-end/Dockerfile` escreva os comandos que farão com que a imagem:
         - rode a partir da imagem do `node` na versão 14;
         - exponha a porta `3001`;
@@ -159,29 +159,43 @@ O avaliador executará o comando no arquivo `command08.dc`.
         - O avaliador executará o comando no arquivo `command09.dc`. <br>
          __Dicas__ <br>
       - O comando ADD do Dockerfile, também pode ser utilizado para descompactar arquivos dentro do container. Entenda a diferença entre o comando ADD e COPY.
-        Continua........
+          
+   10.  Gere uma build a partir do Dockerfile do `front-end` do `todo-app` nomeando a imagem para `todofrontend`. <br>
+Escreva no arquivo `command10.dc` um comando que fará o `build`(documentação do comando) de uma imagem a partir do arquivo `./docker/todo-app/front-end/Dockerfile`, esta imagem deve ter o nome `todofrontend`.
+        - No arquivo `./docker/todo-app/front-end/Dockerfile` escreva os comandos que farão com que a imagem:
+            - rode a partir da imagem do `node` na versão 14;
+            - exponha a porta `3000`;
+            - adicione o arquivo `node_modules.tar.gz` à imagem;
+            - copie todos os arquivos da pasta front-end para a imagem. (você pode usar o caminho relativo, lembrando que a Dockerfile está em `./docker/todo-app/front-end/Dockerfile`);
+            - inicie a aplicação com o comando `npm start`.
+         - Nesse contexto, deve-se criar um arquivo Dockerfile na pasta `./docker/todo-app/front-end/`, que será utilizado com comando exigido no requisito;
+         - Esse arquivo deve buscar reproduzir as etapas de front-end contidas no README.md da pseudo-aplicação para que ele rode corretamente;
+         - O avaliador executará o comando no arquivo `command10.dc`.
+         __Dicas__ <br>
+      - O comando ADD do Dockerfile, também pode ser utilizado para descompactar arquivos dentro do container. Entenda a diferença entre o comando ADD e COPY.
         
-
-            
-   11. Implemente a função `getOldestFromFirstSpecies`.
-       - Implemente a função getOldestFromFirstSpecies que deverá encontrar o animal mais velho da espécie gerenciado por uma pessoa colaboradora.
          
-   12. Implemente a função `getEmployeesCoverage`.
-       - Implemente a função getEmployeesCoverage que deverá retornar as informações sobre a pessoa colaboradora e por quais espécies ela é responsável.
+   11.  Gere uma build a partir do Dockerfile dos `testes` do `todo-app` nomeando a imagem para `todotests`. <br>
+        - Escreva no arquivo `command11.dc` um comando que fará o `build`(documentação do comando) de uma imagem a partir do arquivo `./docker/todo-app/tests/Dockerfile`, esta imagem deve ter o nome `todotests`.<br>
+        - No arquivo `./docker/todo-app/tests/Dockerfile` escreva os comandos que farão com que a imagem:
+           - rode a partir da imagem do `mjgargani/puppeteer:trybe1.0`;
+           - adicione o arquivo `node_modules.tar.gz` à imagem;
+           - copie todos os arquivos da pasta tests para a imagem. (você pode usar o caminho relativo, lembrando que a Dockerfile está em `./docker/todo-app/tests/Dockerfile`);
+           - inicie os testes com o comando `npm test`.
          
-   13. Obtenha ao menos 85% de cobertura de testes na função `getOpeningHours`.
-       
-   14. Obtenha ao menos 95% de cobertura de testes na função `getOpeningHours`.
-       
-   15. Implemente a função `getAnimalMap`.
-       - Faça o mapeamento geográfico dos animais de cada espécie e realize filtros de localização, nome em ordem alfabética e sexo.
+  
 
    ### Requisitos Bônus
    #### Docker-compose
 
-   15. Obtenha 100% de cobertura de testes na função `handlerElephants`.
-       
-   16. Obtenha ao menos 100% de cobertura de testes na função `getOpeningHours`.
+   12. Suba uma orquestração em segundo plano com o docker-compose de forma que `backend`, `frontend` e `tests` consigam se comunicar
+   - O avaliador executará o comando no arquivo command12.dc. Este comando pressupõe a existência do arquivo `./docker/docker-compose.yml`.
+   - O docker-compose deve rodar na versão 3 ou superior.
+   - Dicas
+Use as imagens já "buildadas" que foram executadas nos requisitos 9, 10 e 11 para a criação do compose;
+Consulte a documentação em ./docker/todo-app/README.md;
+É possível adicionar e extrair arquivos .tar.gz no Dockerfile com apenas um comando.
+
        
 
 
