@@ -88,7 +88,7 @@ Quando for necessário fazer a orquestração das aplicações, o arquivo `docke
    npm run test:coverage
    
 ## Status
-O projeto está em andamento 🚧
+O projeto está finalizado com 100% dos requisitos  ✅ 
 
 ## Requisitos 
    
