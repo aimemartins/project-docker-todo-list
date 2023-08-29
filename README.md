@@ -143,7 +143,7 @@ O avaliador executará o comando no arquivo `command07.dc`.<br> <br>
    8. Pare o container `02images` que está em andamento. <br>
 O avaliador executará o comando no arquivo `command08.dc`.
 
-  ### Dockerfile
+   #### Dockerfile
        
    9. Gere uma build a partir do Dockerfile do `back-end` do `todo-app` nomeando a imagem para `todobackend`
           - Implemente a função getSchedule que irá disponibilizar um cronograma com os horários de visita da semana disponíveis para cada espécie de animal. <br> <br>
